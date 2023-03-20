@@ -71,11 +71,11 @@ class Message {
 }
 
 // (G) DATABASE SETTINGS - CHANGE TO YOUR OWN!
-define("DB_HOST", "localhost");
-define("DB_NAME", "dtb_student_chatbox");
+define("DB_HOST", "db4free.net");
+define("DB_NAME", "dtb_student_cb");
 define("DB_CHARSET", "utf8mb4");
-define("DB_USER", "root");
-define("DB_PASSWORD", "");
+define("DB_USER", "bornahorinaproje");
+define("DB_PASSWORD", "ZaSIWPprojektni");
 
 // (H) MESSAGE OBJECT
 $_MSG = new Message();
@@ -83,5 +83,5 @@ $_MSG = new Message();
 // (I) ACT AS USER
 session_start();
 $_SESSION["user"] = ["id" => 1, "name" => "Jon Doe"];
-// $_SESSION["user"] = ["id" => 2, "name" => "Jonhy Doe"];
+//$_SESSION["user"] = ["id" => 2, "name" => "Jonhy Doe"];
 // $_SESSION["user"] = ["id" => 3, "name" => "Joy Doe"];
