@@ -26,8 +26,8 @@ class Users {
   }
 
   // (D) GET USER
-  function get ($id) {
-    $this->query(sprintf("SELECT * FROM `users` WHERE `id`=?"), [$id]);
+  function get ($username) {
+    $this->query(sprintf("SELECT * FROM `users` WHERE `username`=.$username."));
     return $this->stmt->fetch();
   }
 
