@@ -11,7 +11,7 @@ if (isset($_POST["req"])) {
           <div class="mDate"><?=$m["date_send"]?></div>
         </div>
         <div class="mRow <?=$out?"mOut":"mIn"?>"><div class="mRowMsg">
-          <div class="mSender"><?=$m["user_name"]?></div>
+          <div class="mSender"><?=$m["username"]?></div>
           <div class="mTxt"><?=$m["message"]?></div>
         </div></div>
       <?php }}
