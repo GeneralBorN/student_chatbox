@@ -1,6 +1,6 @@
 <?php
 class Message {
-  // CONSTRUCTOR - CONNECT TO THE DATABASE
+  // (A) CONSTRUCTOR - CONNECT TO THE DATABASE
   private $pdo = null;
   private $stmt = null;
   public $error;
@@ -13,44 +13,44 @@ class Message {
     ]);
   }
 
-  // DESTRUCTOR - CLOSE DATABASE CONNECTION
+  // (B) DESTRUCTOR - CLOSE DATABASE CONNECTION
   function __destruct () {
     if ($this->stmt !== null) { $this->stmt = null; }
     if ($this->pdo !== null) { $this->pdo = null; }
   }
 
-  // EXECUTE SQL QUERY
+  // (C) EXECUTE SQL QUERY
   function query ($sql, $data=null) {
     $this->stmt = $this->pdo->prepare($sql);
     $this->stmt->execute($data);
   }
 
-  // GET ALL USERS & NUMBER OF UNREAD MESSAGES
+  // (D) GET ALL USERS & NUMBER OF UNREAD MESSAGES
   function getUsers ($for) {
-    // GET USERS
+    // (D1) GET USERS
     $this->query("SELECT * FROM `users` WHERE `id`!=?", [$for]);
     $users = [];
     while ($r = $this->stmt->fetch()) { $users[$r["id"]] = $r; }
 
-    // COUNT UNREAD MESSAGES
+    // (D2) COUNT UNREAD MESSAGES
     $this->query(
       "SELECT `user_from`, COUNT(*) `ur`
        FROM `messages` WHERE `user_to`=? AND `date_read` IS NULL
        GROUP BY `user_from`", [$for]);
     while ($r = $this->stmt->fetch()) { $users[$r["user_from"]]["unread"] = $r["ur"]; }
 
-    //  RESULTS
+    // (D3) RESULTS
     return $users;
   }
 
-  // GET MESSAGES
+  // (E) GET MESSAGES
   function getMsg ($from, $to, $limit=30) {
-    // MARK ALL AS "READ"
+    // (E1) MARK ALL AS "READ"
     $this->query(
       "UPDATE `messages` SET `date_read`=NOW()
        WHERE `user_from`=? AND `user_to`=? AND `date_read` IS NULL", [$from, $to]);
 
-    // GET MESSAGES
+    // (E2) GET MESSAGES
     $this->query(
       "SELECT m.*, u.`username` FROM `messages` m
        JOIN `users` u ON (m.`user_from`=u.`id`)
@@ -60,7 +60,7 @@ class Message {
     return $this->stmt->fetchAll();
   }
 
-  // SEND MESSAGE
+  // (F) SEND MESSAGE
   function send ($from, $to, $msg) {
     $this->query(
       "INSERT INTO `messages` (`user_from`, `user_to`, `message`) VALUES (?,?,?)",
@@ -70,17 +70,18 @@ class Message {
   }
 }
 
-// DATABASE SETTINGS
+// (G) DATABASE SETTINGS - CHANGE TO YOUR OWN!
 define("DB_HOST", "db4free.net");
 define("DB_NAME", "dtb_student_cb");
 define("DB_CHARSET", "utf8mb4");
 define("DB_USER", "bornahorinaproje");
 define("DB_PASSWORD", "ZaSIWPprojektni");
-// MESSAGE OBJECT
+
+// (H) MESSAGE OBJECT
 $_MSG = new Message();
 
-// (I) ACT AS USER - TREBA MJENJAT ZA LOGIN
-session_start();
-$_SESSION["user"] = ["id" => 1, "name" => "Jon Doe"];
-//$_SESSION["user"] = ["id" => 2, "name" => "Jonhy Doe"];
+// (I) ACT AS USER
+//session_start();
+//$_SESSION["user"] = ["id" => 1, "name" => "Joe Doe"];
+// $_SESSION["user"] = ["id" => 2, "name" => "Jon Doe"];
 // $_SESSION["user"] = ["id" => 3, "name" => "Joy Doe"];
