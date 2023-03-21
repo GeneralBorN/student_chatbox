@@ -8,6 +8,7 @@
   </head>
   <body>
     <?php
+<<<<<<< HEAD
 <<<<<<< HEAD:index.php
     // GET USERS
     if (!isset($_SESSION["user"])) {
@@ -19,6 +20,10 @@
     // (A) GET USERS
     require "2-lib-msg.php";
 >>>>>>> parent of 6a88ea1 (Promjenio imena da ima smisla):4-demo-msg.php
+=======
+    // (A) GET USERS
+    require "2-lib-msg.php";
+>>>>>>> parent of 6a88ea1 (Promjenio imena da ima smisla)
     $users = $_MSG->getUsers($_SESSION["user"]["id"]); ?>
 
     <!-- (B) LEFT : USER LIST -->
