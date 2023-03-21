@@ -82,6 +82,6 @@ $_MSG = new Message();
 
 //  ACT AS USER  
 session_start();
-$_SESSION["user"] = ["id" => 1, "name" => "Horina"];
-//$_SESSION["user"] = ["id" => 2, "name" => "Garasic"];
+//$_SESSION["user"] = ["id" => 1, "name" => "Horina"];
+$_SESSION["user"] = ["id" => 2, "name" => "Garasic"];
 // $_SESSION["user"] = ["id" => 3, "name" => "Gulis"];
