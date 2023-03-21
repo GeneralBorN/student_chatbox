@@ -29,9 +29,12 @@ class Message {
   function getUsers ($for) {
     // (D1) GET USERS
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD:rad-s-bazom.php
     $this->query("SELECT * FROM `users` WHERE `id`!=?", [$for]);
 =======
+=======
+>>>>>>> parent of 6a88ea1 (Promjenio imena da ima smisla)
 =======
 >>>>>>> parent of 6a88ea1 (Promjenio imena da ima smisla)
     $this->query("SELECT * FROM `users` WHERE `user_id`!=?", [$for]);
@@ -79,10 +82,13 @@ class Message {
 
 // (G) DATABASE SETTINGS - CHANGE TO YOUR OWN!
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD:rad-s-bazom.php
 define("DB_HOST", "localhost");
 define("DB_NAME", "dtb_student_chatbox");
 =======
+=======
+>>>>>>> parent of 6a88ea1 (Promjenio imena da ima smisla)
 =======
 >>>>>>> parent of 6a88ea1 (Promjenio imena da ima smisla)
 define("DB_HOST", "db4free.net");
@@ -97,6 +103,7 @@ $_MSG = new Message();
 
 // (I) ACT AS USER
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD:rad-s-bazom.php
 <<<<<<< HEAD:rad-s-bazom.php
 //session_start();
@@ -105,6 +112,8 @@ $_MSG = new Message();
 =======
 =======
 >>>>>>> parent of 6a88ea1 (Promjenio imena da ima smisla):2-lib-msg.php
+=======
+>>>>>>> parent of 6a88ea1 (Promjenio imena da ima smisla)
 =======
 >>>>>>> parent of 6a88ea1 (Promjenio imena da ima smisla)
 session_start();
