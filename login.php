@@ -1,10 +1,7 @@
 <?php
 // (A) PROCESS LOGIN ON SUBMIT
 session_start();
-if (isset($_POST["email"])) {
-  require "user.php";
-  $USR->login($_POST["email"], $_POST["password"]);
-}
+require "user.php";
 
 // (B) REDIRECT USER IF SIGNED IN
 if (isset($_SESSION["user"])) {
