@@ -1,12 +1,12 @@
 var msg = {
-  // (A) HELPER - AJAX FETCH
+  // HELPER - AJAX FETCH
   ajax : (data, after) => {
-    // (A1) FORM DATA
+    // FORM DATA
     let form = new FormData();
     for (const [k,v] of Object.entries(data)) { form.append(k, v); }
 
-    // (A2) FETCH
-    fetch("3-ajax-msg.php", { method:"POST", body:form })
+    // FETCH
+    fetch("poruke.php", { method:"POST", body:form })
     .then(res => res.text())
     .then(txt => after(txt))
     .catch(err => console.error(err));
