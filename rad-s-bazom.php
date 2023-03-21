@@ -80,8 +80,8 @@ define("DB_PASSWORD", "ZaSIWPprojektni");
 // MESSAGE OBJECT
 $_MSG = new Message();
 
-// (I) ACT AS USER - TREBA MJENJAT ZA LOGIN
+//  ACT AS USER  
 session_start();
-$_SESSION["user"] = ["id" => 1, "name" => "Jon Doe"];
-//$_SESSION["user"] = ["id" => 2, "name" => "Jonhy Doe"];
-// $_SESSION["user"] = ["id" => 3, "name" => "Joy Doe"];
+$_SESSION["user"] = ["id" => 1, "name" => "Horina"];
+//$_SESSION["user"] = ["id" => 2, "name" => "Garasic"];
+// $_SESSION["user"] = ["id" => 3, "name" => "Gulis"];
