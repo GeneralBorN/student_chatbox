@@ -17,7 +17,10 @@
       <!-- CURRENT USER -->
       <div id="uNow">
         <img src="slike/x-potato.png">
-        <?=$_SESSION["user"]["name"]?>
+        <?php
+          $_SESSION["user"]["name"];
+          print_r($_SESSION["user"]["name"]);
+        ?>
       </div>
 
       <!-- USER LIST -->
@@ -27,6 +30,11 @@
         <div class="uUnread"><?=isset($u["unread"])?$u["unread"]:0?></div>
       </div>
       <?php } ?>
+      <form method="POST">
+          <input type="submit" name="gara" value="Gara">
+          <input type="submit" name="horina" value="Horina">
+          <input type="submit" name="gulis" value="Gulis">
+        </form>
     </div>
 
     <!-- RIGHT : MESSAGES LIST -->

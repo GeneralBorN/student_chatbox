@@ -83,5 +83,14 @@ $_MSG = new Message();
 //  ACT AS USER  
 session_start();
 //$_SESSION["user"] = ["id" => 1, "name" => "Horina"];
-$_SESSION["user"] = ["id" => 2, "name" => "Garasic"];
+//$_SESSION["user"] = ["id" => 2, "name" => "Garasic"];
 // $_SESSION["user"] = ["id" => 3, "name" => "Gulis"];
+if(isset($_POST["gara"])){
+  $_SESSION["user"] = ["id" => 2, "name" => "Garasic"];
+}
+else if(isset($_POST["horina"])){
+  $_SESSION["user"] = ["id" => 1, "name" => "Horina"];
+}
+else if(isset($_POST["gulis"])){
+  $_SESSION["user"] = ["id" => 3, "name" => "Gulis"];
+}
