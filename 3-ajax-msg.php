@@ -1,8 +1,8 @@
 <?php
 if (isset($_POST["req"])) {
-  require "rad-s-bazom.php";
+  require "2-lib-msg.php";
   switch ($_POST["req"]) {
-    // SHOW MESSAGES
+    // (A) SHOW MESSAGES
     case "show":
       $msg = $_MSG->getMsg($_POST["uid"], $_SESSION["user"]["id"]);
       if (count($msg)>0) { foreach ($msg as $m) {
@@ -17,7 +17,7 @@ if (isset($_POST["req"])) {
       <?php }}
       break;
 
-    // SEND MESSAGE
+    // (B) SEND MESSAGE
     case "send":
       echo $_MSG->send($_SESSION["user"]["id"], $_POST["to"], $_POST["msg"])
         ? "OK" : $_MSG->error ;

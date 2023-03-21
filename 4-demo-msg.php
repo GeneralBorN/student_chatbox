@@ -3,28 +3,33 @@
   <head>
     <title>Student ChatBox</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="x-demo-msg.css">
+    <script src="5-demo-msg.js"></script>
   </head>
   <body>
     <?php
+<<<<<<< HEAD:index.php
     // GET USERS
     if (!isset($_SESSION["user"])) {
       header("Location: login.php");
       exit();
     }
     require "rad-s-bazom.php";
+=======
+    // (A) GET USERS
+    require "2-lib-msg.php";
+>>>>>>> parent of 6a88ea1 (Promjenio imena da ima smisla):4-demo-msg.php
     $users = $_MSG->getUsers($_SESSION["user"]["id"]); ?>
 
-    <!-- LEFT : USER LIST -->
+    <!-- (B) LEFT : USER LIST -->
     <div id="uLeft">
-      <!-- CURRENT USER -->
+      <!-- (B1) CURRENT USER -->
       <div id="uNow">
-        <img src="slike/x-potato.png">
+        <img src="x-potato.png">
         <?=$_SESSION["user"]["name"]?>
       </div>
 
-      <!-- USER LIST -->
+      <!-- (B2) USER LIST -->
       <?php foreach ($users as $uid=>$u) { ?>
       <div class="uRow" id="usr<?=$uid?>" onclick="msg.show(<?=$uid?>)">
         <div class="uName"><?=$u["username"]?></div>
@@ -33,15 +38,15 @@
       <?php } ?>
     </div>
 
-    <!-- RIGHT : MESSAGES LIST -->
+    <!-- (C) RIGHT : MESSAGES LIST -->
     <div id="uRight">
-      <!-- SEND MESSAGE -->
+      <!-- (C1) SEND MESSAGE -->
       <form id="uSend" onsubmit="return msg.send()">
         <input type="text" id="mTxt" required>
         <input type="submit" value="Send">
       </form>
 
-       <!-- MESSAGES -->
+       <!-- (C2) MESSAGES -->
        <div id="uMsg"></div>
     </div>
   </body>
