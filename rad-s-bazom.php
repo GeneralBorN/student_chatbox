@@ -89,5 +89,8 @@ $_MSG = new Message();
 session_start();
 $_SESSION["user"] = ["id" => 1, "name" => "Jon Doe"];
 // $_SESSION["user"] = ["id" => 2, "name" => "Jonhy Doe"];
+<<<<<<< HEAD:rad-s-bazom.php
+>>>>>>> parent of 21d56e7 (Stavljeno na online db):2-lib-msg.php
+=======
 >>>>>>> parent of 21d56e7 (Stavljeno na online db):2-lib-msg.php
 // $_SESSION["user"] = ["id" => 3, "name" => "Joy Doe"];
