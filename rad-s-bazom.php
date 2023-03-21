@@ -28,9 +28,9 @@ class Message {
   // GET ALL USERS & NUMBER OF UNREAD MESSAGES
   function getUsers ($for) {
     // GET USERS
-    $this->query("SELECT * FROM `users` WHERE `user_id`!=?", [$for]);
+    $this->query("SELECT * FROM `users` WHERE `id`!=?", [$for]);
     $users = [];
-    while ($r = $this->stmt->fetch()) { $users[$r["user_id"]] = $r; }
+    while ($r = $this->stmt->fetch()) { $users[$r["id"]] = $r; }
 
     // COUNT UNREAD MESSAGES
     $this->query(
@@ -52,8 +52,8 @@ class Message {
 
     // GET MESSAGES
     $this->query(
-      "SELECT m.*, u.`user_name` FROM `messages` m
-       JOIN `users` u ON (m.`user_from`=u.`user_id`)
+      "SELECT m.*, u.`username` FROM `messages` m
+       JOIN `users` u ON (m.`user_from`=u.`id`)
        WHERE `user_from` IN (?,?) AND `user_to` IN (?,?)
        ORDER BY `date_send` DESC
        LIMIT 0, $limit", [$from, $to, $from, $to]);

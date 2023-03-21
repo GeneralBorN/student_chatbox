@@ -8,7 +8,7 @@
   </head>
   <body>
     <?php
-    // (A) GET USERS
+    //  GET USERS
     require "rad-s-bazom.php";
     $users = $_MSG->getUsers($_SESSION["user"]["id"]); ?>
 
@@ -23,7 +23,7 @@
       <!-- USER LIST -->
       <?php foreach ($users as $uid=>$u) { ?>
       <div class="uRow" id="usr<?=$uid?>" onclick="msg.show(<?=$uid?>)">
-        <div class="uName"><?=$u["user_name"]?></div>
+        <div class="uName"><?=$u["username"]?></div>
         <div class="uUnread"><?=isset($u["unread"])?$u["unread"]:0?></div>
       </div>
       <?php } ?>
