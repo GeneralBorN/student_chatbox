@@ -71,17 +71,23 @@ class Message {
 }
 
 // (G) DATABASE SETTINGS - CHANGE TO YOUR OWN!
-define("DB_HOST", "db4free.net");
-define("DB_NAME", "dtb_student_cb");
+define("DB_HOST", "localhost");
+define("DB_NAME", "dtb_student_chatbox");
 define("DB_CHARSET", "utf8mb4");
-define("DB_USER", "bornahorinaproje");
-define("DB_PASSWORD", "ZaSIWPprojektni");
+define("DB_USER", "root");
+define("DB_PASSWORD", "");
 
 // (H) MESSAGE OBJECT
 $_MSG = new Message();
 
 // (I) ACT AS USER
+<<<<<<< HEAD:rad-s-bazom.php
 //session_start();
 //$_SESSION["user"] = ["id" => 1, "name" => "Joe Doe"];
 // $_SESSION["user"] = ["id" => 2, "name" => "Jon Doe"];
+=======
+session_start();
+$_SESSION["user"] = ["id" => 1, "name" => "Jon Doe"];
+// $_SESSION["user"] = ["id" => 2, "name" => "Jonhy Doe"];
+>>>>>>> parent of 21d56e7 (Stavljeno na online db):2-lib-msg.php
 // $_SESSION["user"] = ["id" => 3, "name" => "Joy Doe"];
